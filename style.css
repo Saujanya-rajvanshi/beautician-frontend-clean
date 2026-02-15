@@ -1,0 +1,291 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0b0608;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+nav h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: #d4af7a;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #d4af7a;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================= PAGE BASE ================= */
+.page {
+    min-height: 100vh;
+    padding: 120px 8% 80px;
+}
+
+/* ================= HERO ================= */
+.hero-page {
+    height: 100vh;
+    width: 100%;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("https://png.pngtree.com/background/20230528/original/pngtree-makeup-table-with-lighting-and-make-up-picture-image_2777135.jpg")
+        center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f5e6d3; /* luxury nude */
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    color: #e3c9a8;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 35px;
+}
+
+.hero-content button {
+    padding: 16px 45px;
+    border-radius: 40px;
+    border: none;
+    background: linear-gradient(45deg, #c8a36a, #f3d9a4);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.hero-content button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(212,175,122,0.6);
+}
+
+/* ================= SECTION HEADER ================= */
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.section-header p {
+    color: #d4af7a;
+    margin-top: 10px;
+}
+
+/* ================= WORK PAGE ================= */
+.work-page {
+    background: #10090c;
+}
+
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.work-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.15);
+}
+
+.work-info {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.9)
+    );
+    opacity: 0;
+    transition: 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+.work-card:hover .work-info {
+    opacity: 1;
+}
+
+.work-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.work-info p {
+    font-size: 0.9rem;
+    color: #e3c9a8;
+    margin-bottom: 15px;
+}
+
+.work-info button {
+    align-self: flex-start;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #d4af7a;
+    cursor: pointer;
+}
+
+/* ================= FORMS ================= */
+.login-page,
+.booking-page {
+    background: #0b0608;
+}
+
+.luxury-form {
+    max-width: 450px;
+}
+
+.luxury-form input,
+.luxury-form textarea,
+.luxury-form select {
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    background: transparent;
+    border: 1px solid rgba(212,175,122,0.6);
+    border-radius: 14px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.luxury-form input:focus,
+.luxury-form textarea:focus,
+.luxury-form select:focus {
+    outline: none;
+    border-color: #d4af7a;
+    box-shadow: 0 0 15px rgba(212,175,122,0.4);
+}
+
+.luxury-form textarea {
+    resize: none;
+    height: 90px;
+}
+
+.luxury-form button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 35px;
+    border: none;
+    background: linear-gradient(45deg, #c8a36a, #f3d9a4);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.luxury-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(212,175,122,0.6);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    background: #000000;
+    color: #d4af7a;
+    font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+}

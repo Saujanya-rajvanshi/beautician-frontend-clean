@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shagun Kaithwas | Luxury Makeup & Hair Artist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar">
+    <h3>Shagun Kaithwas</h3>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#booking">Book</a></li>
+    </ul>
+</nav>
+
+<!-- ================= HERO PAGE ================= -->
+<section id="hero" class="page hero-page">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Shagun Kaithwas</h1>
+        <p>Luxury Makeup & Hair Artist</p>
+
+        <p class="tagline">
+            Trained at <strong>Lakmé Academy, Noida</strong>
+        </p>
+
+        <button id="exploreBtn">
+            Explore Her Signature Work
+        </button>
+    </div>
+</section>
+
+<!-- ================= WORK / PORTFOLIO PAGE ================= -->
+<section id="work" class="page work-page">
+    <header class="section-header">
+        <h2>Signature Work</h2>
+        <p>Elegance • Precision • High-End Finish</p>
+    </header>
+
+    <div class="work-gallery">
+
+        <!-- CARD 1 -->
+        <div class="work-card">
+            <img src="cardoneo.jpeg">
+            <div class="work-info">
+                <h3>Bridal Elegance</h3>
+                <p>Luxury bridal makeup with flawless skin finish</p>
+                <button>View Look</button>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="work-card">
+            <img src="cardtwo.jpeg">
+            <div class="work-info">
+                <h3>South Indian look</h3>
+                <p>Soft glam with radiant highlights</p>
+                <button>View Look</button>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="work-card">
+            <img src="cardthree.jpeg">
+            <div class="work-info">
+                <h3>Party Glam</h3>
+                <p>Bold eyes and statement lips</p>
+                <button>View Look</button>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="work-card">
+            <img src="cardfour.jpeg">
+            <div class="work-info">
+                <h3>Hair Styling</h3>
+                <p>Modern & traditional hairstyles</p>
+                <button>View Look</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= LOGIN PAGE ================= -->
+<section id="login" class="page login-page">
+    <header class="section-header">
+        <h2>Client Login</h2>
+        <p>Luxury service begins with personal care</p>
+    </header>
+
+    <form class="luxury-form">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Phone Number">
+        <textarea placeholder="Address"></textarea>
+        <input type="password" placeholder="Create Password">
+
+        <button type="submit">
+            Continue to Booking
+        </button>
+    </form>
+</section>
+
+<!-- ================= BOOKING PAGE ================= -->
+<form class="luxury-form" id="bookingForm">
+
+    <label>Select Date</label>
+    <input type="date" id="date" required>
+
+    <label>Select Time Slot</label>
+    <select id="time" required>
+        <option value="">Select Time</option>
+        <option>10:00 AM</option>
+        <option>12:00 PM</option>
+        <option>02:00 PM</option>
+        <option>04:00 PM</option>
+        <option>06:00 PM</option>
+    </select>
+
+    <label>Select Service</label>
+    <select id="service" required>
+        <option value="">Select Service</option>
+        <option>Bridal Makeup</option>
+        <option>Engagement Makeup</option>
+        <option>Party Makeup</option>
+        <option>Hair Styling</option>
+    </select>
+
+    <label>Price</label>
+    <input type="text" id="price" readonly>
+
+    <button type="submit">
+        Confirm Booking
+    </button>
+
+</form>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 Shagun Kaithwas</p>
+    <p>Luxury Makeup • Hair • Elegance</p>
+</footer>
+
+<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
+
+</body>
+</html>
