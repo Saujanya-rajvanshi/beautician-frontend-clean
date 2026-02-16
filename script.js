@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const price = document.getElementById("price").value;
 
             try {
-                const response = await fetch("https://beautician-backend.onrender.com/api/bookings", {
+                const response = await fetch("https://beautician-backend.onrender.com/api/bookings/book", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
