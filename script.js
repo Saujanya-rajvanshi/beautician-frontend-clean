@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = document.getElementById("date").value;
             const time = document.getElementById("time").value;
             const service = document.getElementById("service").value;
-            let price = document.getElementById("price").value;
-            // remove ₹ and commas
-            price = price.replace(/[₹,]/g, "");
-            price = Number(price);
+            let rawPrice = document.getElementById("price").value;
+            // Remove everything that is NOT a number
+            let price = parseInt(rawPrice.replace(/\D/g, ""));
+
 
             try {
                 const response = await fetch("https://beautician-backend.onrender.com/api/bookings/book", {
