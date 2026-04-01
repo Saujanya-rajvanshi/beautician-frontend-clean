@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* ================= EXPLORE BUTTON ================= */
     const exploreBtn = document.getElementById("exploreBtn");
     if (exploreBtn) {
         exploreBtn.addEventListener("click", () => {
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* ================= NAVBAR SCROLL ================= */
     const navbar = document.getElementById("navbar");
     let lastScroll = 0;
 
@@ -25,58 +27,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const serviceSelect = document.getElementById("service");
-    const priceInput = document.getElementById("price");
+    /* ================= WHATSAPP BOOKING ================= */
+    const whatsappBtn = document.getElementById("whatsappBtn");
 
-    if (serviceSelect && priceInput) {
-        serviceSelect.addEventListener("change", () => {
-            const prices = {
-                "Bridal Makeup": "₹20,000",
-                "Engagement Makeup": "₹12,000",
-                "Party Makeup": "₹8,000",
-                "Hair Styling": "₹5,000"
-            };
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener("click", () => {
 
-            priceInput.value = prices[serviceSelect.value] || "";
-        });
-    }
-
-    const bookingForm = document.getElementById("bookingForm");
-
-    if (bookingForm) {
-        bookingForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
+            const name = document.getElementById("name").value.trim();
             const service = document.getElementById("service").value;
-            let rawPrice = document.getElementById("price").value;
-            // Remove everything that is NOT a number
-            let price = parseInt(rawPrice.replace(/\D/g, ""));
+            const date = document.getElementById("date").value;
 
-
-            try {
-                const response = await fetch("https://beautician-backend.onrender.com/api/bookings/book", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ date, time, service, price })
-                });
-
-                if (!response.ok) {
-                    throw new Error("Failed to save booking");
-                }
-
-                alert("✨ Booking Saved Successfully ✨");
-                bookingForm.reset();
-                priceInput.value = "";
-
-            } catch (error) {
-                alert("❌ Booking Failed. Please try again.");
-                console.error(error);
+            // Validation
+            if (!name || !service || !date) {
+                alert("⚠️ Please fill all details");
+                return;
             }
+
+            // Format date nicely
+            const formattedDate = new Date(date).toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+
+            // Message
+            const message = 
+`Hello, I want to book an appointment:
+
+Name: ${name}
+Service: ${service}
+Date: ${formattedDate}
+
+Please confirm availability.`;
+
+            // Encode message
+            const encodedMessage = encodeURIComponent(message);
+
+            // ⚠️ Replace with your sister's WhatsApp number
+            const phoneNumber = "919555843965";
+
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+
         });
     }
-
 });
